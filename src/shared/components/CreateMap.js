@@ -7,8 +7,9 @@ import axios from 'axios';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useEffect, useRef, useState } from 'react';
 import Geocoder from './Geocoder';
+import mapboxgl from 'mapbox-gl';
 // eslint-disable-next-line import/no-webpack-loader-syntax
-
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 const CreateMap = (props) => {
   const mapRef = useRef();
   // const [props.lnglat, props.setLngLat] = useState();
@@ -51,7 +52,7 @@ const CreateMap = (props) => {
             latitude: props.lnglat.lat,
             zoom: 8,
           }}
-          mapStyle="mapbox://styles/umernisar/cksxc90rf5o7218o2yeyi051b"
+          mapStyle="mapbox://styles/mapbox/streets-v11"
         >
           <Marker
             longitude={props.lnglat.lng}

@@ -4,9 +4,11 @@ import ReactMapGL, {
   NavigationControl,
 } from 'react-map-gl';
 
+import 'mapbox-gl/dist/mapbox-gl.css';
 import { useEffect, useRef, useState } from 'react';
-
+import mapboxgl from 'mapbox-gl';
 // eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 const ShowMap = (props) => {
   const mapRef = useRef();
   const [lnglat, setLngLat] = useState();
@@ -29,7 +31,7 @@ const ShowMap = (props) => {
             latitude: lnglat.lat,
             zoom: 8,
           }}
-          mapStyle="mapbox://styles/umernisar/cksxc90rf5o7218o2yeyi051b"
+          mapStyle="mapbox://styles/mapbox/streets-v11"
         >
           <Marker longitude={lnglat.lng} latitude={lnglat.lat} />
           <NavigationControl position="bottom-right" />
