@@ -29,7 +29,8 @@ const defaults = {
   },
 };
 
-const api = (method, url, variables) =>
+const api = (method, url, variables) => {
+  console.log(method, url, variables);
   new Promise((resolve, reject) => {
     axios({
       url: `${defaults.baseURL}${url}`,
@@ -59,7 +60,7 @@ const api = (method, url, variables) =>
       }
     );
   });
-
+};
 const optimisticUpdate = async (url, updatedFields) => {
   try {
     await api('put', url, updatedFields);

@@ -15,6 +15,7 @@ const MyProjects = ({ userId, setOrgProjects }) => {
   const projectCreateModalHelpers = createQueryParamModalHelpers(
     'project-create'
   );
+  console.log(userId, 'user IIId==========');
   const [{ data, error }, fetchProjects] = useApi.get(`/project/${userId}`);
   useEffect(() => {
     let mounted = true;
