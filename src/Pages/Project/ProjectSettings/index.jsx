@@ -163,12 +163,7 @@ const ProjectSettings = ({ project, fetchProject, openInvitationModal }) => {
 
               {project.location.latitude ? (
                 <MapContainer>
-                  <CreateMap
-                    lnglat={lnglat}
-                    setLngLat={setLngLat}
-                    latitude={project.location.latitude}
-                    longitude={project.location.longitude}
-                  />
+                  <CreateMap lnglat={lnglat} setLngLat={setLngLat} />
                 </MapContainer>
               ) : (
                 ''

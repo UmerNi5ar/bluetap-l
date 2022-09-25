@@ -17,7 +17,7 @@ const ShowMap = (props) => {
     setLngLat({ lng: props.longitude, lat: props.latitude });
   }, []);
 
-  if (lnglat)
+  if (lnglat) {
     return (
       <div
         style={{ width: '100%', height: '20rem', borderRadius: '20px' }}
@@ -48,7 +48,7 @@ const ShowMap = (props) => {
         </ReactMapGL>
       </div>
     );
-  else return <div>Loading....</div>;
+  } else return <div>Loading....</div>;
 };
 
 export default ShowMap;
