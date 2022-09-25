@@ -4,6 +4,7 @@ import ReactMapGL, {
   NavigationControl,
 } from 'react-map-gl';
 import axios from 'axios';
+import 'mapbox-gl/dist/mapbox-gl.css';
 import { useEffect, useRef, useState } from 'react';
 import Geocoder from './Geocoder';
 // eslint-disable-next-line import/no-webpack-loader-syntax
@@ -50,7 +51,7 @@ const CreateMap = (props) => {
             latitude: props.lnglat.lat,
             zoom: 8,
           }}
-          mapStyle="mapbox://styles/mapbox/streets-v11"
+          mapStyle="mapbox://styles/umernisar/cksxc90rf5o7218o2yeyi051b"
         >
           <Marker
             longitude={props.lnglat.lng}
