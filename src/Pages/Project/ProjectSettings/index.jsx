@@ -33,7 +33,9 @@ import { getTextContentsFromHtmlString } from '../../../shared/utils/browser';
 import { useEffect } from 'react';
 import { useRef } from 'react';
 import axios from 'axios';
-
+import mapboxgl from 'mapbox-gl';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 const propTypes = {
   project: PropTypes.object.isRequired,
   fetchProject: PropTypes.func.isRequired,
@@ -162,9 +164,7 @@ const ProjectSettings = ({ project, fetchProject, openInvitationModal }) => {
               )}
 
               {project.location.latitude ? (
-                <MapContainer>
-                  <CreateMap lnglat={lnglat} setLngLat={setLngLat} />
-                </MapContainer>
+                <CreateMap lnglat={lnglat} setLngLat={setLngLat} />
               ) : (
                 ''
               )}
@@ -230,3 +230,4 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps)(ProjectSettings);
+/////////////////////////////////////////////////////////////

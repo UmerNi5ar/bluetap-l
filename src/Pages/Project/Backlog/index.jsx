@@ -20,7 +20,9 @@ import ProjectBacklogEpics from '../Rows';
 import useCurrentUser from '../../../shared/hooks/currentUser';
 import { connect } from 'react-redux';
 import ShowMap from '../../../shared/components/ShowMap';
-
+import mapboxgl from 'mapbox-gl';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 const propTypes = {
   project: PropTypes.object.isRequired,
   fetchProject: PropTypes.func.isRequired,
@@ -66,12 +68,10 @@ const ProjectBacklog = ({
         ) : null}
 
         {project.location.latitude ? (
-          <MapContainer>
-            <ShowMap
-              latitude={project.location.latitude}
-              longitude={project.location.longitude}
-            />
-          </MapContainer>
+          <ShowMap
+            latitude={project.location.latitude}
+            longitude={project.location.longitude}
+          />
         ) : (
           ''
         )}
@@ -132,3 +132,4 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps)(ProjectBacklog);
+/////////////////////////
