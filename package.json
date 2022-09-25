@@ -3,7 +3,6 @@
   "homepage": ".",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://dry-plateau-53276.herokuapp.com/v1",
   "dependencies": {
     "@mapbox/mapbox-gl-geocoder": "^5.0.1",
     "@nadavshaar/react-grid-table": "^1.0.2",
