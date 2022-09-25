@@ -4,7 +4,6 @@ import ReactMapGL, {
   NavigationControl,
 } from 'react-map-gl';
 
-import 'mapbox-gl/dist/mapbox-gl.css';
 import { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 

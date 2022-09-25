@@ -10,7 +10,6 @@ import {
 
 export const Sidebar = styled.div`
   position: fixed;
-  background-color: red;
   z-index: ${zIndexValues.navLeft + 1};
   top: 0;
   left: ${sizes.appNavBarLeftWidth}px;

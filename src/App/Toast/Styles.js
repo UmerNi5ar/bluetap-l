@@ -6,7 +6,6 @@ import { Icon } from '../../shared/components';
 export const Container = styled.div`
   z-index: ${zIndexValues.modal + 1};
   position: fixed;
-  background-color: red;
   right: 30px;
   top: 50px;
 `;

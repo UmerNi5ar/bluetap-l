@@ -6,7 +6,6 @@ import Icon from '../../../shared/components/Icon';
 export const ScrollOverlay = styled.div`
   z-index: ${zIndexValues.modal};
   position: fixed;
-  background-color: red;
   top: 0;
   left: 0;
   height: 100%;
