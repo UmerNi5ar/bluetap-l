@@ -5,10 +5,8 @@ import ReactMapGL, {
 } from 'react-map-gl';
 
 import { useEffect, useRef, useState } from 'react';
-import mapboxgl from 'mapbox-gl';
 
 // eslint-disable-next-line import/no-webpack-loader-syntax
-mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 const ShowMap = (props) => {
   const mapRef = useRef();
   const [lnglat, setLngLat] = useState();

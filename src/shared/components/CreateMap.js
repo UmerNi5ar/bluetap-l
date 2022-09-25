@@ -5,10 +5,8 @@ import ReactMapGL, {
 } from 'react-map-gl';
 import axios from 'axios';
 import { useEffect, useRef, useState } from 'react';
-import mapboxgl from 'mapbox-gl';
 import Geocoder from './Geocoder';
 // eslint-disable-next-line import/no-webpack-loader-syntax
-mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 const CreateMap = (props) => {
   const mapRef = useRef();
